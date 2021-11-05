@@ -23,24 +23,24 @@ spaCy, Gensim, NLTK, Lexrank, Sumy, sklearn, Flask, MaterializeCSS
 
 ### Work Flow:
 1. Essay Grader
-- Scaling grades from different sets
-- Pre-processing
-- Feature extraction using sklearn and nltk
-- Prediction using Support vector regressor
+    - Scaling grades from different sets
+    - Pre-processing
+    - Feature extraction using sklearn and nltk
+    - Prediction using Support vector regressor
 2. Text Summarizer using Sumy Lexrank and Gensim
-- Convert Paragraphs to sentences
-- Text Pre-processing
-- Find vector representation for every sentence
-- Construct similarity matrix between vectors
-- Similarity matrix is then converted into a graph
-- The top-ranked sentences form the final summary
+    - Convert Paragraphs to sentences
+    - Text Pre-processing
+    - Find vector representation for every sentence
+    - Construct similarity matrix between vectors
+    - Similarity matrix is then converted into a graph
+    - The top-ranked sentences form the final summary
 3. Text Summarizer using Spacy and NLTK:
-- Convert Paragraphs to Sentences
-- Text Pre-processing
-- Tokenizing the Sentences
-- Find Weighted Frequency of Occurrence
-- Replace Words by Weighted Frequency in Original Sentences
-- Sort Sentences in Descending Order of Sum
+    - Convert Paragraphs to Sentences
+    - Text Pre-processing
+    - Tokenizing the Sentences
+    - Find Weighted Frequency of Occurrence
+    - Replace Words by Weighted Frequency in Original Sentences
+    - Sort Sentences in Descending Order of Sum
 
 ### Steps:
 1. Install the necessary packages
