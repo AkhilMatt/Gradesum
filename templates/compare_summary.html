@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Gradesum</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body><div class="navbar-fixed">
+  <nav class="grey darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Gradesum</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{url_for('compare_summary')}}">Compare Summarizers</a></li>
+        <li><a href="{{url_for('essay_grading')}}">Essay grading</a></li>
+      </ul>
+
+      
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+	<ul id="nav-mobile" class="sidenav">
+        <li><a href="{{url_for('compare_summary')}}">Compare Summarizers</a></li>
+          <li><a href="{{url_for('essay_grading')}}">Essay grading</a></li>
+      </ul>
+      <!--</div>
+      </li>
+   
+    </ul>
+  </div>-->
+</section>
+
+
+<div class="container">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="input-field col s12 m10">
+          <div class="icon-block">
+          <form method="POST" action="/comparer">
+        <textarea name="rawtext" cols="3" rows="5" class="form-control" required="true" placeholder="Enter Text Here"></textarea>
+          
+        <br/>
+        <button class="btn btn-small waves-effect waves-light lighten-1" type="reset">Clear</button>
+          <button class="btn btn-small waves-effect waves-light lighten-1" type="submit">Summarize</button>
+          
+        </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- End -->
+
+  <!-- Results -->
+  <section class="section section-solutions-about grey darken-2">
+<div class="container white-text">
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="icon-block">
+            <h5 class="center">Your Text:</h5>
+
+            <p class="light">{{ctext}}</p>
+        </div>
+          </div>
+        </div>
+      </div>
+
+  
+  <!--</div>-->
+</section>
+
+    <!-- SECTION: RESULTS FOR DIFFERENT SUMMARIZERS -->
+  <section class="section section-solutions-about grey darken-2 ">
+    <div class="container white-text">
+      <div class="row">
+    
+        <div class="col s12 m12 offset-m1">
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3">
+                  <a href="#tab1" class="teal-text">SpaCy</a>
+                </li>
+                <li class="tab col s3">
+                  <a href="#tab2" class="teal-text">Gensim</a>
+                </li>
+                <li class="tab col s3">
+                  <a href="#tab3" class="teal-text">NLTK</a>
+                </li>
+                <li class="tab col s3">
+                  <a href="#tab4" class="teal-text">Sumy LexRank</a>
+                </li>
+            
+              </ul>
+            </div>
+            <div id="tab1" class="col s12">
+              <div class="grey darken-3"><p style="padding:5px;font-size:14px;">{{ final_summary_spacy }}</p></div>
+          
+                
+            </div>
+            <div id="tab2" class="col s12">                        
+              <div class="grey darken-3"><p style="padding:5px;font-size:14px;">{{ final_summary_gensim }}</p></div>
+            </div>
+            <div id="tab3" class="col s12">
+              <div class="grey darken-3"><p style="padding:5px;font-size:14px;">{{ final_summary_nltk }}</p></div>
+          
+            
+            </div>
+            <div id="tab4" class="col s12">
+              <div class="grey darken-3"><p style="padding:5px;font-size:14px;">{{ final_summary_sumy }}</p></div>
+         
+            </div>
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/initfinal.js"></script>
+  </body>
+</html>
